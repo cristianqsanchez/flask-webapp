@@ -8,8 +8,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 </head>
-<body class="dark:bg-gray-800 bg-gray-50 dark:text-gray-50 text-gray-600">
-  {% block body %}
-  {% endblock %}
+<body class="dark:bg-gray-900 bg-white dark:text-gray-50 text-gray-600">
+
+    {% include 'partials/_navbar.html' %}
+    {% block body %}{% endblock %}
+  
 </body>
 </html>
