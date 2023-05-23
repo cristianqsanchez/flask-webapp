@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from models.user import User
 from utils.db import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy import update
 
 users = Blueprint('users', __name__)
 
@@ -56,3 +57,24 @@ def home():
 def user(id):
     user = User.query.filter_by(id=id).first()
     return render_template('[userId].html', user=user)
+
+@users.route('/edit/<string:id>/', methods=['POST'])
+def edit(id):
+
+    username = request.form['username']
+    password = request.form['password']
+
+    
+    hashed_password = generate_password_hash(password, )
+
+    user = User.query.filter_by(id=id).first()
+    user.username = username
+    user.password = hashed_password
+
+    
+    db.session.add(user)
+    db.session.commit()
+
+
+    return redirect(url_for('users.home'))
+
