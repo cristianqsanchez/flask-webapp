@@ -2,6 +2,10 @@
 
 ## installation :genie:
 
+### Install python :snake:
+```
+https://www.python.org/downloads/
+```
 ### clone repository :dizzy:
 ```
 git clone https://github.com/cristianqsanchez/flask-webapp.git
@@ -12,8 +16,14 @@ python -m venv venv
 ```
 
 ### set interpreter :snake:
+
+#### Linux:
 ```
 source venv/bin/activate
+```
+#### Windows:
+```
+.\venv\Scripts\activate
 ```
 
 ### install dependencies :package:
